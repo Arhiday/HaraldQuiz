@@ -20,8 +20,6 @@ img.pic{width:120px;display:block;margin:8px 0;border-radius:10px;}
 .progress-bar{height:10px;background:#cde1ff;border-radius:8px;overflow:hidden;margin:12px 0;}
 .progress{height:100%;width:0;background:#0b76ef;transition:width .3s;}
 footer{text-align:center;font-size:.85rem;color:#555;margin-top:18px;}
-.correct{color:green;font-weight:bold}
-.wrong{color:#c0392b;font-weight:bold}
 </style>
 </head>
 <body>
@@ -29,13 +27,13 @@ footer{text-align:center;font-size:.85rem;color:#555;margin-top:18px;}
 
 <div class="quiz-box">
   <p><strong>Instructions / Petunjuk:</strong><br>
-  Read the question carefully (Baca soalnya dengan teliti). Choose the correct answer (Pilih jawaban yang benar).<br>
-  Use <b>Next (Berikutnya)</b> to continue and <b>Prev (Sebelumnya)</b> to go back.</p>
+  Read each question carefully (Baca setiap soal dengan teliti). Choose the correct answer (Pilih jawaban yang benar).<br>
+  Use <b>Next (Berikutnya)</b> and <b>Prev (Sebelumnya)</b> to navigate between questions.</p>
 
   <div class="progress-bar"><div id="prog" class="progress"></div></div>
 
   <form id="quizForm" onsubmit="return false;">
-    <!-- ========== SOAL ========== -->
+    <!-- ======= 20 QUESTIONS ======= -->
     <div class="page active" data-q="1">
       <h3>1. What subject do you learn about numbers?</h3>
       <div class="options">
@@ -47,7 +45,7 @@ footer{text-align:center;font-size:.85rem;color:#555;margin-top:18px;}
     </div>
 
     <div class="page" data-q="2">
-      <h3>2. Look at the picture. What is it? / Lihat gambar berikut!</h3>
+      <h3>2. Look at the picture. What is it?</h3>
       <img src="https://upload.wikimedia.org/wikipedia/commons/3/3a/2017_Canon_EOS_800D.jpg" class="pic" alt="camera">
       <div class="options">
         <label><input type="radio" name="q2" value="A"> Bike</label>
@@ -58,7 +56,7 @@ footer{text-align:center;font-size:.85rem;color:#555;margin-top:18px;}
     </div>
 
     <div class="page" data-q="3">
-      <h3>3. Choose the correct sentence (Pilih kalimat yang benar):</h3>
+      <h3>3. Choose the correct sentence:</h3>
       <div class="options">
         <label><input type="radio" name="q3" value="A"> She do her homework every day.</label>
         <label><input type="radio" name="q3" value="B"> She does her homework every day.</label>
@@ -68,78 +66,180 @@ footer{text-align:center;font-size:.85rem;color:#555;margin-top:18px;}
     </div>
 
     <div class="page" data-q="4">
-      <h3>4. ASIMO is a ______ robot.</h3>
+      <h3>4. What do you say when you feel good?</h3>
       <div class="options">
-        <label><input type="radio" name="q4" value="A"> humanoid</label>
-        <label><input type="radio" name="q4" value="B"> animal</label>
-        <label><input type="radio" name="q4" value="C"> monster</label>
-        <label><input type="radio" name="q4" value="D"> flying</label>
+        <label><input type="radio" name="q4" value="A"> I’m sad.</label>
+        <label><input type="radio" name="q4" value="B"> I’m happy.</label>
+        <label><input type="radio" name="q4" value="C"> I’m tired.</label>
+        <label><input type="radio" name="q4" value="D"> I’m angry.</label>
       </div>
     </div>
 
     <div class="page" data-q="5">
-      <h3>5. What do you say when you feel good? (Apa yang kamu katakan saat merasa senang?)</h3>
+      <h3>5. What can you do in P.E. class (pelajaran olahraga)?</h3>
       <div class="options">
-        <label><input type="radio" name="q5" value="A"> I’m sad.</label>
-        <label><input type="radio" name="q5" value="B"> I’m happy.</label>
-        <label><input type="radio" name="q5" value="C"> I’m tired.</label>
-        <label><input type="radio" name="q5" value="D"> I’m angry.</label>
+        <label><input type="radio" name="q5" value="A"> Jump and run</label>
+        <label><input type="radio" name="q5" value="B"> Sing and draw</label>
+        <label><input type="radio" name="q5" value="C"> Read and write</label>
+        <label><input type="radio" name="q5" value="D"> Cook and eat</label>
       </div>
     </div>
 
     <div class="page" data-q="6">
-      <h3>6. “Does he play football?” is a question using ______.</h3>
+      <h3>6. Choose the word with “th” sound like “this”:</h3>
       <div class="options">
-        <label><input type="radio" name="q6" value="A"> do/does</label>
-        <label><input type="radio" name="q6" value="B"> past tense</label>
-        <label><input type="radio" name="q6" value="C"> future tense</label>
-        <label><input type="radio" name="q6" value="D"> modal can</label>
+        <label><input type="radio" name="q6" value="A"> think</label>
+        <label><input type="radio" name="q6" value="B"> these</label>
+        <label><input type="radio" name="q6" value="C"> thin</label>
+        <label><input type="radio" name="q6" value="D"> thank</label>
       </div>
     </div>
 
     <div class="page" data-q="7">
-      <h3>7. What can you do in P.E. class (pelajaran olahraga)?</h3>
+      <h3>7. Look at the picture. What is it?</h3>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/d/d7/Bicycle.svg" class="pic" alt="bike">
       <div class="options">
-        <label><input type="radio" name="q7" value="A"> Jump and run</label>
-        <label><input type="radio" name="q7" value="B"> Sing and draw</label>
-        <label><input type="radio" name="q7" value="C"> Read and write</label>
-        <label><input type="radio" name="q7" value="D"> Cook and eat</label>
+        <label><input type="radio" name="q7" value="A"> Bike</label>
+        <label><input type="radio" name="q7" value="B"> Camera</label>
+        <label><input type="radio" name="q7" value="C"> Guitar</label>
+        <label><input type="radio" name="q7" value="D"> Marker</label>
       </div>
     </div>
 
     <div class="page" data-q="8">
-      <h3>8. Choose the word with “th” sound as in “this”:</h3>
+      <h3>8. Which one is used to draw? (Yang digunakan untuk menggambar adalah...)</h3>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/f/f5/Markers.jpg" class="pic" alt="markers">
       <div class="options">
-        <label><input type="radio" name="q8" value="A"> think</label>
-        <label><input type="radio" name="q8" value="B"> three</label>
-        <label><input type="radio" name="q8" value="C"> these</label>
-        <label><input type="radio" name="q8" value="D"> thin</label>
+        <label><input type="radio" name="q8" value="A"> Guitar</label>
+        <label><input type="radio" name="q8" value="B"> Markers</label>
+        <label><input type="radio" name="q8" value="C"> Bike</label>
+        <label><input type="radio" name="q8" value="D"> Camera</label>
       </div>
     </div>
 
     <div class="page" data-q="9">
-      <h3>9. What can ASIMO do? (Apa yang bisa dilakukan ASIMO?)</h3>
+      <h3>9. “Those are my books.” What does “those” mean?</h3>
       <div class="options">
-        <label><input type="radio" name="q9" value="A"> Sing a song</label>
-        <label><input type="radio" name="q9" value="B"> Walk and run</label>
-        <label><input type="radio" name="q9" value="C"> Sleep and eat</label>
-        <label><input type="radio" name="q9" value="D"> Swim</label>
+        <label><input type="radio" name="q9" value="A"> Dekat / near</label>
+        <label><input type="radio" name="q9" value="B"> Jauh / far</label>
+        <label><input type="radio" name="q9" value="C"> Banyak / many</label>
+        <label><input type="radio" name="q9" value="D"> Sedikit / few</label>
       </div>
     </div>
 
     <div class="page" data-q="10">
       <h3>10. Look at the picture. What is it?</h3>
-      <img src="https://upload.wikimedia.org/wikipedia/commons/9/9b/Toy_robot_2.jpg" class="pic" alt="robot">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/4/45/Guitar.jpg" class="pic" alt="guitar">
       <div class="options">
         <label><input type="radio" name="q10" value="A"> Guitar</label>
-        <label><input type="radio" name="q10" value="B"> Robot</label>
+        <label><input type="radio" name="q10" value="B"> Camera</label>
         <label><input type="radio" name="q10" value="C"> Bike</label>
-        <label><input type="radio" name="q10" value="D"> Marker</label>
+        <label><input type="radio" name="q10" value="D"> Robot</label>
       </div>
     </div>
 
-    <!-- ... lanjutan 11–20 (sama seperti versi sebelumnya, tidak dipotong di sini demi ringkas) ... -->
+    <!-- ============ Soal 11–20 ============ -->
+    <div class="page" data-q="11">
+      <h3>11. How do you feel when you are sleepy?</h3>
+      <div class="options">
+        <label><input type="radio" name="q11" value="A"> Happy</label>
+        <label><input type="radio" name="q11" value="B"> Tired</label>
+        <label><input type="radio" name="q11" value="C"> Angry</label>
+        <label><input type="radio" name="q11" value="D"> Sad</label>
+      </div>
+    </div>
 
+    <div class="page" data-q="12">
+      <h3>12. Choose the opposite of “sad”:</h3>
+      <div class="options">
+        <label><input type="radio" name="q12" value="A"> Happy</label>
+        <label><input type="radio" name="q12" value="B"> Angry</label>
+        <label><input type="radio" name="q12" value="C"> Tired</label>
+        <label><input type="radio" name="q12" value="D"> Sleepy</label>
+      </div>
+    </div>
+
+    <div class="page" data-q="13">
+      <h3>13. What is the plural of “book”?</h3>
+      <div class="options">
+        <label><input type="radio" name="q13" value="A"> Books</label>
+        <label><input type="radio" name="q13" value="B"> Bookes</label>
+        <label><input type="radio" name="q13" value="C"> Bookies</label>
+        <label><input type="radio" name="q13" value="D"> Book</label>
+      </div>
+    </div>
+
+    <div class="page" data-q="14">
+      <h3>14. “This is my pencil.” — What does “this” mean?</h3>
+      <div class="options">
+        <label><input type="radio" name="q14" value="A"> Dekat / near</label>
+        <label><input type="radio" name="q14" value="B"> Jauh / far</label>
+        <label><input type="radio" name="q14" value="C"> Banyak / many</label>
+        <label><input type="radio" name="q14" value="D"> Semua / all</label>
+      </div>
+    </div>
+
+    <div class="page" data-q="15">
+      <h3>15. Which one is correct?</h3>
+      <div class="options">
+        <label><input type="radio" name="q15" value="A"> He have a bike.</label>
+        <label><input type="radio" name="q15" value="B"> He has a bike.</label>
+        <label><input type="radio" name="q15" value="C"> He having a bike.</label>
+        <label><input type="radio" name="q15" value="D"> He haves a bike.</label>
+      </div>
+    </div>
+
+    <div class="page" data-q="16">
+      <h3>16. How many letters are in the word “school”?</h3>
+      <div class="options">
+        <label><input type="radio" name="q16" value="A"> 6</label>
+        <label><input type="radio" name="q16" value="B"> 5</label>
+        <label><input type="radio" name="q16" value="C"> 7</label>
+        <label><input type="radio" name="q16" value="D"> 4</label>
+      </div>
+    </div>
+
+    <div class="page" data-q="17">
+      <h3>17. Choose the correct spelling:</h3>
+      <div class="options">
+        <label><input type="radio" name="q17" value="A"> camra</label>
+        <label><input type="radio" name="q17" value="B"> camera</label>
+        <label><input type="radio" name="q17" value="C"> cammera</label>
+        <label><input type="radio" name="q17" value="D"> camare</label>
+      </div>
+    </div>
+
+    <div class="page" data-q="18">
+      <h3>18. Choose the correct sentence:</h3>
+      <div class="options">
+        <label><input type="radio" name="q18" value="A"> They are friends.</label>
+        <label><input type="radio" name="q18" value="B"> They is friends.</label>
+        <label><input type="radio" name="q18" value="C"> They am friends.</label>
+        <label><input type="radio" name="q18" value="D"> They be friends.</label>
+      </div>
+    </div>
+
+    <div class="page" data-q="19">
+      <h3>19. What color is the sky?</h3>
+      <div class="options">
+        <label><input type="radio" name="q19" value="A"> Green</label>
+        <label><input type="radio" name="q19" value="B"> Red</label>
+        <label><input type="radio" name="q19" value="C"> Blue</label>
+        <label><input type="radio" name="q19" value="D"> Yellow</label>
+      </div>
+    </div>
+
+    <div class="page" data-q="20">
+      <h3>20. Which one is a musical instrument?</h3>
+      <div class="options">
+        <label><input type="radio" name="q20" value="A"> Camera</label>
+        <label><input type="radio" name="q20" value="B"> Guitar</label>
+        <label><input type="radio" name="q20" value="C"> Marker</label>
+        <label><input type="radio" name="q20" value="D"> Bag</label>
+      </div>
+    </div>
+
+    <!-- NAVIGATION -->
     <div style="margin-top:10px;">
       <button id="prevBtn" type="button">← Prev / Sebelumnya</button>
       <button id="nextBtn" type="button">Next / Berikutnya →</button>
@@ -176,34 +276,13 @@ function showPage(i){
   prog.style.width=pct+'%';
 }
 
-// tombol event
 next.onclick=()=>showPage(current+1);
 prev.onclick=()=>showPage(current-1);
 
-const answers={q1:'B',q2:'B',q3:'B',q4:'A',q5:'B',q6:'A',q7:'A',q8:'C',q9:'B',q10:'B',
+const answers={q1:'B',q2:'B',q3:'B',q4:'B',q5:'A',q6:'B',q7:'A',q8:'B',q9:'B',q10:'A',
                q11:'B',q12:'A',q13:'A',q14:'A',q15:'B',q16:'A',q17:'B',q18:'A',q19:'C',q20:'B'};
 
 submit.onclick=function(){
   const form=document.getElementById('quizForm');
   const result=document.getElementById('result');
-  let correct=0; let unanswered=[];
-  Object.keys(answers).forEach((k,i)=>{
-    const sel=form.querySelector(`[name="${k}"]:checked`);
-    if(!sel)unanswered.push(i+1);
-    else if(sel.value===answers[k])correct++;
-  });
-  if(unanswered.length){
-    alert("Masih ada soal yang belum dijawab: "+unanswered.join(", "));
-    return;
-  }
-  const total=Object.keys(answers).length;
-  const percent=Math.round(correct/total*100);
-  let grade=percent>=85?"A (Excellent)":percent>=70?"B (Good)":percent>=55?"C (Fair)":"D (Try Again)";
-  result.innerHTML=`<strong>Score / Nilai:</strong> ${correct}/${total} (${percent}%)<br>
-  <strong>Grade / Predikat:</strong> ${grade}`;
-  result.style.display='block';
-  showPage(pages.length-1);
-};
-</script>
-</body>
-</html>
+  let correct=0;
