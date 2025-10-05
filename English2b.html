@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kuis Interaktif Bahasa Inggris Kelas 2 SD</title>
+    <title>Kuis Interaktif 30 Soal Bahasa Inggris Kelas 2 SD</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -30,8 +30,15 @@
         }
         ol {
             padding-left: 20px;
+            column-count: 1; /* Default for small screens */
+        }
+        @media (min-width: 600px) {
+            ol {
+                column-count: 2; /* Two columns for wider screens */
+            }
         }
         li {
+            break-inside: avoid;
             margin-bottom: 20px;
             border-bottom: 1px solid #eee;
             padding-bottom: 10px;
@@ -79,79 +86,219 @@
 <body>
 
 <div class="container">
-    <h2>Kuis Interaktif: Back to School & My Things (Kelas 2 SD)</h2>
-    <p>Petunjuk: Pilih satu jawaban yang paling tepat untuk setiap soal. Skor 100 adalah nilai sempurna!</p>
+    <h2>Kuis Interaktif 30 Soal: Back to School & My Things (Kelas 2 SD)</h2>
+    <p>Petunjuk: Pilih satu jawaban yang paling tepat. Nilai sempurna adalah 100.</p>
 
-    <form id="kuis-sd-inggris-final">
+    <form id="kuis-sd-inggris-30">
         <ol>
             <li>
-                <p>1. Benda apa yang kita gunakan untuk menulis di buku tulis?</p>
-                <input type="radio" name="q1" value="A" id="q1fa"><label for="q1fa"> A. Eraser</label><br>
-                <input type="radio" name="q1" value="B" id="q1fb"><label for="q1fb"> B. **Pencil**</label><br>
-                <input type="radio" name="q1" value="C" id="q1fc"><label for="q1fc"> C. Ruler</label>
+                <p>1. Benda apa yang digunakan untuk menulis di buku?</p>
+                <input type="radio" name="q1" value="A"><label> A. Eraser</label><br>
+                <input type="radio" name="q1" value="B"><label> B. **Pencil**</label><br>
+                <input type="radio" name="q1" value="C"><label> C. Ruler</label>
             </li>
             
             <li>
-                <p>2. Jika teman Anda membawa **"Book"** baru, itu artinya dia membawa...</p>
-                <input type="radio" name="q2" value="A" id="q2fa"><label for="q2fa"> A. **Buku**</label><br>
-                <input type="radio" name="q2" value="B" id="q2fb"><label for="q2fb"> B. Tas</label><br>
-                <input type="radio" name="q2" value="C" id="q2fc"><label for="q2fc"> C. Pensil</label>
+                <p>2. Saya gunakan **Ruler** untuk...</p>
+                <input type="radio" name="q2" value="A"><label> A. Drawing pictures</label><br>
+                <input type="radio" name="q2" value="B"><label> B. **Drawing straight lines**</label><br>
+                <input type="radio" name="q2" value="C"><label> C. Reading a book</label>
             </li>
             
             <li>
-                <p>3. Di mana kita meletakkan pensil, pulpen, dan penghapus?</p>
-                <input type="radio" name="q3" value="A" id="q3fa"><label for="q3fa"> A. In the Bag</label><br>
-                <input type="radio" name="q3" value="B" id="q3fb"><label for="q3fb"> B. In the Desk</label><br>
-                <input type="radio" name="q3" value="C" id="q3fc"><label for="q3fc"> C. In the **Pencil Case**</label>
+                <p>3. **"Book"** dalam Bahasa Indonesia artinya...</p>
+                <input type="radio" name="q3" value="A"><label> A. **Buku**</label><br>
+                <input type="radio" name="q3" value="B"><label> B. Tas</label><br>
+                <input type="radio" name="q3" value="C"><label> C. Pensil</label>
             </li>
             
             <li>
-                <p>4. Alat untuk menghapus tulisan di buku adalah...</p>
-                <input type="radio" name="q4" value="A" id="q4fa"><label for="q4fa"> A. Pen</label><br>
-                <input type="radio" name="q4" value="B" id="q4fb"><label for="q4fb"> B. Marker</label><br>
-                <input type="radio" name="q4" value="C" id="q4fc"><label for="q4fc"> C. **Eraser**</label>
+                <p>4. Untuk menghapus tulisan pensil, saya menggunakan **...**</p>
+                <input type="radio" name="q4" value="A"><label> A. Pen</label><br>
+                <input type="radio" name="q4" value="B"><label> B. Sharpener</label><br>
+                <input type="radio" name="q4" value="C"><label> C. **Eraser**</label>
             </li>
             
             <li>
-                <p>5. Guru menulis menggunakan kapur di **...** (Papan Tulis).</p>
-                <input type="radio" name="q5" value="A" id="q5fa"><label for="q5fa"> A. Table</label><br>
-                <input type="radio" name="q5" value="B" id="q5fb"><label for="q5fb"> B. **Board**</label><br>
-                <input type="radio" name="q5" value="C" id="q5fc"><label for="q5fc"> C. Floor</label>
+                <p>5. Di mana kita menyimpan pensil dan penghapus?</p>
+                <input type="radio" name="q5" value="A"><label> A. Bag</label><br>
+                <input type="radio" name="q5" value="B"><label> B. **Pencil Case**</label><br>
+                <input type="radio" name="q5" value="C"><label> C. Chair</label>
             </li>
             
             <li>
-                <p>6. **"Ruler"** adalah...</p>
-                <input type="radio" name="q6" value="A" id="q6fa"><label for="q6fa"> A. Pulpen</label><br>
-                <input type="radio" name="q6" value="B" id="q6fb"><label for="q6fb"> B. **Penggaris**</label><br>
-                <input type="radio" name="q6" value="C" id="q6fc"><label for="q6fc"> C. Pensil</label>
+                <p>6. **"Glue"** artinya...</p>
+                <input type="radio" name="q6" value="A"><label> A. Gunting</label><br>
+                <input type="radio" name="q6" value="B"><label> B. **Lem**</label><br>
+                <input type="radio" name="q6" value="C"><label> C. Pita</label>
             </li>
             
             <li>
-                <p>7. Benda apa yang **TIDAK** termasuk perlengkapan sekolah?</p>
-                <input type="radio" name="q7" value="A" id="q7fa"><label for="q7fa"> A. Glue (Lem)</label><br>
-                <input type="radio" name="q7" value="B" id="q7fb"><label for="q7fb"> B. **Doll (Boneka)**</label><br>
-                <input type="radio" name="q7" value="C" id="q7fc"><label for="q7fc"> C. Scissors (Gunting)</label>
+                <p>7. Benda untuk meruncingkan pensil adalah...</p>
+                <input type="radio" name="q7" value="A"><label> A. Ruler</label><br>
+                <input type="radio" name="q7" value="B"><label> B. **Sharpener**</label><br>
+                <input type="radio" name="q7" value="C"><label> C. Scissors</label>
             </li>
             
             <li>
-                <p>8. Tempat kita belajar dan bertemu guru adalah **...**</p>
-                <input type="radio" name="q8" value="A" id="q8fa"><label for="q8fa"> A. Home</label><br>
-                <input type="radio" name="q8" value="B" id="q8fb"><label for="q8fb"> B. **School**</label><br>
-                <input type="radio" name="q8" value="C" id="q8fc"><label for="q8fc"> C. Park</label>
+                <p>8. "This is my **...**" (Pulpen)</p>
+                <input type="radio" name="q8" value="A"><label> A. Pencil</label><br>
+                <input type="radio" name="q8" value="B"><label> B. **Pen**</label><br>
+                <input type="radio" name="q8" value="C"><label> C. Marker</label>
             </li>
             
             <li>
-                <p>9. Guru bertanya: **"Is this a chair?"** Jawablah dalam Bahasa Inggris jika jawabannya benar.</p>
-                <input type="radio" name="q9" value="A" id="q9fa"><label for="q9fa"> A. No, it is not.</label><br>
-                <input type="radio" name="q9" value="B" id="q9fb"><label for="q9fb"> B. **Yes, it is.**</label><br>
-                <input type="radio" name="q9" value="C" id="q9fc"><label for="q9fc"> C. I like it.</label>
+                <p>9. Saya menggunakan **...** untuk memotong kertas.</p>
+                <input type="radio" name="q9" value="A"><label> A. Ruler</label><br>
+                <input type="radio" name="q9" value="B"><label> B. Pen</label><br>
+                <input type="radio" name="q9" value="C"><label> C. **Scissors**</label>
             </li>
             
             <li>
-                <p>10. Kalimat yang benar untuk mengatakan "Ini adalah tasku" adalah...</p>
-                <input type="radio" name="q10" value="A" id="q10fa"><label for="q10fa"> A. This is her bag.</label><br>
-                <input type="radio" name="q10" value="B" id="q10fb"><label for="q10fb"> B. This is his bag.</label><br>
-                <input type="radio" name="q10" value="C" id="q10fc"><label for="q10fc"> C. **This is my bag.**</label>
+                <p>10. Bahasa Inggris dari **"Kotak Pensil"** adalah...</p>
+                <input type="radio" name="q10" value="A"><label> A. **Pencil Case**</label><br>
+                <input type="radio" name="q10" value="B"><label> B. Pen Box</label><br>
+                <input type="radio" name="q10" value="C"><label> C. Bag Case</label>
+            </li>
+
+            <li>
+                <p>11. Tempat kita belajar dan bertemu guru adalah **...**</p>
+                <input type="radio" name="q11" value="A"><label> A. Home</label><br>
+                <input type="radio" name="q11" value="B"><label> B. **School**</label><br>
+                <input type="radio" name="q11" value="C"><label> C. Park</label>
+            </li>
+            
+            <li>
+                <p>12. Di kelas, guru menulis di **...** (Papan Tulis).</p>
+                <input type="radio" name="q12" value="A"><label> A. Table</label><br>
+                <input type="radio" name="q12" value="B"><label> B. **Board**</label><br>
+                <input type="radio" name="q12" value="C"><label> C. Door</label>
+            </li>
+            
+            <li>
+                <p>13. Kita duduk di atas **...** di kelas.</p>
+                <input type="radio" name="q13" value="A"><label> A. Table</label><br>
+                <input type="radio" name="q13" value="B"><label> B. **Chair**</label><br>
+                <input type="radio" name="q13" value="C"><label> C. Floor</label>
+            </li>
+            
+            <li>
+                <p>14. **"Bag"** artinya...</p>
+                <input type="radio" name="q14" value="A"><label> A. Sepatu</label><br>
+                <input type="radio" name="q14" value="B"><label> B. Buku</label><br>
+                <input type="radio" name="q14" value="C"><label> C. **Tas**</label>
+            </li>
+            
+            <li>
+                <p>15. Benda untuk menghapus tulisan di papan tulis adalah...</p>
+                <input type="radio" name="q15" value="A"><label> A. Eraser</label><br>
+                <input type="radio" name="q15" value="B"><label> B. Pencil Case</label><br>
+                <input type="radio" name="q15" value="C"><label> C. **Board Eraser**</label>
+            </li>
+            
+            <li>
+                <p>16. Kita meletakkan buku di atas **...** (Meja).</p>
+                <input type="radio" name="q16" value="A"><label> A. **Table/Desk**</label><br>
+                <input type="radio" name="q16" value="B"><label> B. Window</label><br>
+                <input type="radio" name="q16" value="C"><label> C. Wall</label>
+            </li>
+            
+            <li>
+                <p>17. **"Classroom"** artinya...</p>
+                <input type="radio" name="q17" value="A"><label> A. Ruang Guru</label><br>
+                <input type="radio" name="q17" value="B"><label> B. Kantin</label><br>
+                <input type="radio" name="q17" value="C"><label> C. **Ruang Kelas**</label>
+            </li>
+            
+            <li>
+                <p>18. **"Window"** adalah...</p>
+                <input type="radio" name="q18" value="A"><label> A. Pintu</label><br>
+                <input type="radio" name="q18" value="B"><label> B. **Jendela**</label><br>
+                <input type="radio" name="q18" value="C"><label> C. Lantai</label>
+            </li>
+            
+            <li>
+                <p>19. Bahasa Inggris dari **"Pintu"** adalah...</p>
+                <input type="radio" name="q19" value="A"><label> A. Wall</label><br>
+                <input type="radio" name="q19" value="B"><label> B. Window</label><br>
+                <input type="radio" name="q19" value="C"><label> C. **Door**</label>
+            </li>
+            
+            <li>
+                <p>20. Benda yang digunakan guru untuk menulis di papan (selain kapur) adalah...</p>
+                <input type="radio" name="q20" value="A"><label> A. Pen</label><br>
+                <input type="radio" name="q20" value="B"><label> B. Pencil</label><br>
+                <input type="radio" name="q20" value="C"><label> C. **Marker**</label>
+            </li>
+
+            <li>
+                <p>21. Guru bertanya: **"Is this a pencil?"** Jawablah jika benda itu adalah pulpen.</p>
+                <input type="radio" name="q21" value="A"><label> A. Yes, it is.</label><br>
+                <input type="radio" name="q21" value="B"><label> B. **No, it is not.**</label><br>
+                <input type="radio" name="q21" value="C"><label> C. I like it.</label>
+            </li>
+            
+            <li>
+                <p>22. Kalimat yang benar untuk mengatakan "Ini adalah tas saya" adalah...</p>
+                <input type="radio" name="q22" value="A"><label> A. This is her bag.</label><br>
+                <input type="radio" name="q22" value="B"><label> B. **This is my bag.**</label><br>
+                <input type="radio" name="q22" value="C"><label> C. This is my chair.</label>
+            </li>
+            
+            <li>
+                <p>23. Lengkapi kalimat: **"I like my new..."** (Pilih yang paling cocok)</p>
+                <input type="radio" name="q23" value="A"><label> A. Chicken</label><br>
+                <input type="radio" name="q23" value="B"><label> B. Tree</label><br>
+                <input type="radio" name="q23" value="C"><label> C. **Ruler**</label>
+            </li>
+            
+            <li>
+                <p>24. Jika Anda suka buku baru Anda, Anda berkata: **"I like my new..."**</p>
+                <input type="radio" name="q24" value="A"><label> A. Bag</label><br>
+                <input type="radio" name="q24" value="B"><label> B. Pencil</label><br>
+                <input type="radio" name="q24" value="C"><label> C. **Book**</label>
+            </li>
+            
+            <li>
+                <p>25. Guru bertanya: **"What is your name?"** Anda menjawab...</p>
+                <input type="radio" name="q25" value="A"><label> A. I am fine.</label><br>
+                <input type="radio" name="q25" value="B"><label> B. **My name is...**</label><br>
+                <input type="radio" name="q25" value="C"><label> C. Thank you.</label>
+            </li>
+            
+            <li>
+                <p>26. "My mother has a red bag. It is **...** bag." (Kata ganti kepunyaan)</p>
+                <input type="radio" name="q26" value="A"><label> A. his</label><br>
+                <input type="radio" name="q26" value="B"><label> B. **her**</label><br>
+                <input type="radio" name="q26" value="C"><label> C. my</label>
+            </li>
+            
+            <li>
+                <p>27. Benda apa yang **TIDAK** bisa kita temukan di kelas?</p>
+                <input type="radio" name="q27" value="A"><label> A. Chair</label><br>
+                <input type="radio" name="q27" value="B"><label> B. Table</label><br>
+                <input type="radio" name="q27" value="C"><label> C. **Refrigerator**</label>
+            </li>
+            
+            <li>
+                <p>28. Kalimat yang menggunakan kata **"Desk"** dengan benar adalah...</p>
+                <input type="radio" name="q28" value="A"><label> A. I sit on the desk.</label><br>
+                <input type="radio" name="q28" value="B"><label> B. **I put my book on the desk.**</label><br>
+                <input type="radio" name="q28" value="C"><label> C. I wear the desk.</label>
+            </li>
+            
+            <li>
+                <p>29. "I like to **read** a book." **"Read"** artinya...</p>
+                <input type="radio" name="q29" value="A"><label> A. Menulis</label><br>
+                <input type="radio" name="q29" value="B"><label> B. **Membaca**</label><br>
+                <input type="radio" name="q29" value="C"><label> C. Mendengar</label>
+            </li>
+            
+            <li>
+                <p>30. Jawablah: **"Do you go to school?"** (Ya)</p>
+                <input type="radio" name="q30" value="A"><label> A. No, I don't.</label><br>
+                <input type="radio" name="q30" value="B"><label> B. **Yes, I do.**</label><br>
+                <input type="radio" name="q30" value="C"><label> C. Yes, I am.</label>
             </li>
         </ol>
         <button type="button" onclick="cekKuisFinal()">Cek Hasil Kuis</button>
@@ -159,7 +306,7 @@
 
     <div id="hasil-kuis-final">
         <h3>**Laporan Hasil Kuis**</h3>
-        <p>Jawaban Benar: **<span id="jml-benar-final">0</span>** dari 10 soal</p>
+        <p>Jawaban Benar: **<span id="jml-benar-final">0</span>** dari 30 soal</p>
         <p><h4>Skor Akhir Anda: **<span id="skor-total-final">0</span> / 100**</h4></p>
         <div id="pesan-feedback-final" style="font-weight: bold; margin-top: 10px;"></div>
     </div>
@@ -167,49 +314,61 @@
 
 <script>
     const kunciJawabanFinal = {
-        q1: 'B', q2: 'A', q3: 'C', q4: 'C', q5: 'B',
-        q6: 'B', q7: 'B', q8: 'B', q9: 'B', q10: 'C'
+        q1: 'B', q2: 'B', q3: 'A', q4: 'C', q5: 'B',
+        q6: 'B', q7: 'B', q8: 'B', q9: 'C', q10: 'A',
+        q11: 'B', q12: 'B', q13: 'B', q14: 'C', q15: 'C',
+        q16: 'A', q17: 'C', q18: 'B', q19: 'C', q20: 'C',
+        q21: 'B', q22: 'B', q23: 'C', q24: 'C', q25: 'B',
+        q26: 'B', q27: 'C', q28: 'B', q29: 'B', q30: 'B'
     };
     
     function cekKuisFinal() {
         let benar = 0;
         let dijawab = 0;
-        const form = document.getElementById('kuis-sd-inggris-final');
+        const totalSoal = 30;
+        const form = document.getElementById('kuis-sd-inggris-30');
         const hasilDiv = document.getElementById('hasil-kuis-final');
         const feedbackDiv = document.getElementById('pesan-feedback-final');
 
-        // Reset class to remove previous highlights (optional: for better user experience)
-        document.querySelectorAll('li').forEach(li => li.style.backgroundColor = 'transparent');
+        document.querySelectorAll('li').forEach(li => {
+            li.style.backgroundColor = 'transparent'; // Reset warna
+        });
 
-        for (let i = 1; i <= 10; i++) {
+        for (let i = 1; i <= totalSoal; i++) {
             const namaPertanyaan = 'q' + i;
             const jawabanBenar = kunciJawabanFinal[namaPertanyaan];
             const elemenJawaban = form.elements[namaPertanyaan];
-            const listItem = elemenJawaban[0].closest('li');
             
             let jawabanDipilih = null;
+            let listItem = null;
+
             for (let j = 0; j < elemenJawaban.length; j++) {
                 if (elemenJawaban[j].checked) {
                     jawabanDipilih = elemenJawaban[j].value;
+                    listItem = elemenJawaban[j].closest('li');
                     dijawab++;
                     break;
                 }
             }
 
-            if (jawabanDipilih === jawabanBenar) {
-                benar++;
-                listItem.style.backgroundColor = '#d4edda'; // Hijau muda untuk benar
-            } else if (jawabanDipilih) {
-                listItem.style.backgroundColor = '#f8d7da'; // Merah muda untuk salah
+            if (jawabanDipilih !== null) {
+                if (jawabanDipilih === jawabanBenar) {
+                    benar++;
+                    listItem.style.backgroundColor = '#d4edda'; // Hijau muda untuk benar
+                } else {
+                    listItem.style.backgroundColor = '#f8d7da'; // Merah muda untuk salah
+                }
             }
         }
         
-        const skor = benar * 10;
+        // Hitung skor (Skor max 100, 30 soal, jadi per soal = 100/30 ≈ 3.33)
+        const skor = Math.round((benar / totalSoal) * 100);
+
         document.getElementById('jml-benar-final').innerText = benar;
         document.getElementById('skor-total-final').innerText = skor;
         hasilDiv.style.display = 'block';
 
-        if (dijawab < 10) {
+        if (dijawab < totalSoal) {
             feedbackDiv.innerHTML = '<span style="color: red;">Perhatian: Anda baru menjawab ' + dijawab + ' soal. Jawab semua soal untuk skor maksimum!</span>';
         } else if (skor === 100) {
             feedbackDiv.innerHTML = '<span style="color: green;">🎉 **HEBAT!** Anda mendapat skor sempurna 100!</span>';
