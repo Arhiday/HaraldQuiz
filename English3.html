@@ -1,288 +1,322 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>English Quiz - Back to School & My Things</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>English Quiz – Back to School & My Things</title>
 <style>
-:root{font-family:system-ui,Segoe UI,Roboto;}
-body{max-width:900px;margin:30px auto;padding:20px;background:#f7faff;color:#111;}
-h1{text-align:center;color:#0b4ea2;}
-.quiz-box{background:#fff;border-radius:14px;padding:22px;box-shadow:0 6px 20px rgba(0,0,0,0.08);}
-.page{display:none;}
-.page.active{display:block;}
-.options label{display:block;padding:10px;margin:6px 0;border:1px solid #dce6f3;border-radius:8px;cursor:pointer;background:#fafcfe;}
-.options input{margin-right:8px;}
-button{background:#0b76ef;color:#fff;border:none;border-radius:8px;padding:10px 18px;cursor:pointer;font-weight:600;margin:4px;}
-button:disabled{opacity:.6;cursor:not-allowed;}
-#result{background:#eef7ff;border-radius:10px;padding:16px;margin-top:16px;border:1px solid #cde1ff;}
-img.pic{width:120px;display:block;margin:8px 0;border-radius:10px;}
-.progress-bar{height:10px;background:#cde1ff;border-radius:8px;overflow:hidden;margin:12px 0;}
-.progress{height:100%;width:0;background:#0b76ef;transition:width .3s;}
-footer{text-align:center;font-size:.85rem;color:#555;margin-top:18px;}
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: #f3f7ff;
+  color: #222;
+  padding: 20px;
+  max-width: 900px;
+  margin: auto;
+}
+h1 { text-align: center; color: #0b4ea2; }
+.quiz-box {
+  background: #fff;
+  padding: 20px;
+  border-radius: 14px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+.options label {
+  display: block;
+  background: #f8faff;
+  margin: 5px 0;
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid #d0def7;
+  cursor: pointer;
+}
+.options input { margin-right: 8px; }
+button {
+  margin-top: 15px;
+  background: #0b76ef;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-weight: 600;
+}
+button:hover { background: #095ec2; }
+#result {
+  display: none;
+  background: #e9f4ff;
+  border: 1px solid #bcd9ff;
+  border-radius: 10px;
+  padding: 15px;
+  margin-top: 15px;
+}
+img.pic {
+  width: 120px;
+  border-radius: 10px;
+  display: block;
+  margin: 10px 0;
+}
 </style>
 </head>
 <body>
+
 <h1>English Quiz<br><small>Back to School & My Things</small></h1>
 
 <div class="quiz-box">
   <p><strong>Instructions / Petunjuk:</strong><br>
-  Read each question carefully (Baca setiap soal dengan teliti). Choose the correct answer (Pilih jawaban yang benar).<br>
-  Use <b>Next (Berikutnya)</b> and <b>Prev (Sebelumnya)</b> to navigate between questions.</p>
-
-  <div class="progress-bar"><div id="prog" class="progress"></div></div>
+  Read the questions carefully (Baca setiap pertanyaan dengan teliti).<br>
+  Choose the correct answer (Pilih jawaban yang benar).<br>
+  When finished, click <b>Submit / Selesai</b> to see your score.</p>
 
   <form id="quizForm" onsubmit="return false;">
-    <!-- ======= 20 QUESTIONS ======= -->
-    <div class="page active" data-q="1">
-      <h3>1. What subject do you learn about numbers?</h3>
-      <div class="options">
-        <label><input type="radio" name="q1" value="A"> Science</label>
-        <label><input type="radio" name="q1" value="B"> Math</label>
-        <label><input type="radio" name="q1" value="C"> English</label>
-        <label><input type="radio" name="q1" value="D"> Art</label>
-      </div>
-    </div>
+    <ol>
+      <li>
+        What subject do you learn about numbers?<br>
+        (Pelajaran apa yang mempelajari tentang angka?)<br>
+        <div class="options">
+          <label><input type="radio" name="q1" value="A"> Science / IPA</label>
+          <label><input type="radio" name="q1" value="B"> Math / Matematika</label>
+          <label><input type="radio" name="q1" value="C"> English / Bahasa Inggris</label>
+          <label><input type="radio" name="q1" value="D"> Art / Seni</label>
+        </div>
+      </li>
 
-    <div class="page" data-q="2">
-      <h3>2. Look at the picture. What is it?</h3>
-      <img src="https://upload.wikimedia.org/wikipedia/commons/3/3a/2017_Canon_EOS_800D.jpg" class="pic" alt="camera">
-      <div class="options">
-        <label><input type="radio" name="q2" value="A"> Bike</label>
-        <label><input type="radio" name="q2" value="B"> Camera</label>
-        <label><input type="radio" name="q2" value="C"> Robot</label>
-        <label><input type="radio" name="q2" value="D"> Guitar</label>
-      </div>
-    </div>
+      <li>
+        Look at the picture! What is it? (Lihat gambar! Apa ini?)<br>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/3/3a/2017_Canon_EOS_800D.jpg" class="pic" alt="camera">
+        <div class="options">
+          <label><input type="radio" name="q2" value="A"> Bike / Sepeda</label>
+          <label><input type="radio" name="q2" value="B"> Camera / Kamera</label>
+          <label><input type="radio" name="q2" value="C"> Robot</label>
+          <label><input type="radio" name="q2" value="D"> Guitar / Gitar</label>
+        </div>
+      </li>
 
-    <div class="page" data-q="3">
-      <h3>3. Choose the correct sentence:</h3>
-      <div class="options">
-        <label><input type="radio" name="q3" value="A"> She do her homework every day.</label>
-        <label><input type="radio" name="q3" value="B"> She does her homework every day.</label>
-        <label><input type="radio" name="q3" value="C"> She doing her homework every day.</label>
-        <label><input type="radio" name="q3" value="D"> She done her homework every day.</label>
-      </div>
-    </div>
+      <li>
+        Choose the correct sentence (Pilih kalimat yang benar):<br>
+        <div class="options">
+          <label><input type="radio" name="q3" value="A"> She do her homework every day.</label>
+          <label><input type="radio" name="q3" value="B"> She does her homework every day.</label>
+          <label><input type="radio" name="q3" value="C"> She doing her homework every day.</label>
+          <label><input type="radio" name="q3" value="D"> She done her homework every day.</label>
+        </div>
+      </li>
 
-    <div class="page" data-q="4">
-      <h3>4. What do you say when you feel good?</h3>
-      <div class="options">
-        <label><input type="radio" name="q4" value="A"> I’m sad.</label>
-        <label><input type="radio" name="q4" value="B"> I’m happy.</label>
-        <label><input type="radio" name="q4" value="C"> I’m tired.</label>
-        <label><input type="radio" name="q4" value="D"> I’m angry.</label>
-      </div>
-    </div>
+      <li>
+        What do you say when you feel good?<br>
+        (Apa yang kamu katakan saat merasa senang?)<br>
+        <div class="options">
+          <label><input type="radio" name="q4" value="A"> I’m sad / Saya sedih.</label>
+          <label><input type="radio" name="q4" value="B"> I’m happy / Saya senang.</label>
+          <label><input type="radio" name="q4" value="C"> I’m tired / Saya lelah.</label>
+          <label><input type="radio" name="q4" value="D"> I’m angry / Saya marah.</label>
+        </div>
+      </li>
 
-    <div class="page" data-q="5">
-      <h3>5. What can you do in P.E. class (pelajaran olahraga)?</h3>
-      <div class="options">
-        <label><input type="radio" name="q5" value="A"> Jump and run</label>
-        <label><input type="radio" name="q5" value="B"> Sing and draw</label>
-        <label><input type="radio" name="q5" value="C"> Read and write</label>
-        <label><input type="radio" name="q5" value="D"> Cook and eat</label>
-      </div>
-    </div>
+      <li>
+        What can you do in P.E. class (pelajaran olahraga)?<br>
+        <div class="options">
+          <label><input type="radio" name="q5" value="A"> Jump and run / Melompat dan berlari</label>
+          <label><input type="radio" name="q5" value="B"> Sing and draw / Bernyanyi dan menggambar</label>
+          <label><input type="radio" name="q5" value="C"> Read and write / Membaca dan menulis</label>
+          <label><input type="radio" name="q5" value="D"> Cook and eat / Memasak dan makan</label>
+        </div>
+      </li>
 
-    <div class="page" data-q="6">
-      <h3>6. Choose the word with “th” sound like “this”:</h3>
-      <div class="options">
-        <label><input type="radio" name="q6" value="A"> think</label>
-        <label><input type="radio" name="q6" value="B"> these</label>
-        <label><input type="radio" name="q6" value="C"> thin</label>
-        <label><input type="radio" name="q6" value="D"> thank</label>
-      </div>
-    </div>
+      <li>
+        Choose the word with “th” sound as in “this”.<br>
+        (Pilih kata yang memiliki bunyi “th” seperti pada kata “this”)<br>
+        <div class="options">
+          <label><input type="radio" name="q6" value="A"> think</label>
+          <label><input type="radio" name="q6" value="B"> three</label>
+          <label><input type="radio" name="q6" value="C"> these</label>
+          <label><input type="radio" name="q6" value="D"> thin</label>
+        </div>
+      </li>
 
-    <div class="page" data-q="7">
-      <h3>7. Look at the picture. What is it?</h3>
-      <img src="https://upload.wikimedia.org/wikipedia/commons/d/d7/Bicycle.svg" class="pic" alt="bike">
-      <div class="options">
-        <label><input type="radio" name="q7" value="A"> Bike</label>
-        <label><input type="radio" name="q7" value="B"> Camera</label>
-        <label><input type="radio" name="q7" value="C"> Guitar</label>
-        <label><input type="radio" name="q7" value="D"> Marker</label>
-      </div>
-    </div>
+      <li>
+        Look at the picture! What is it?<br>
+        (Lihat gambar berikut!)<br>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/9/9b/Toy_robot_2.jpg" class="pic" alt="robot">
+        <div class="options">
+          <label><input type="radio" name="q7" value="A"> Guitar / Gitar</label>
+          <label><input type="radio" name="q7" value="B"> Robot</label>
+          <label><input type="radio" name="q7" value="C"> Bike / Sepeda</label>
+          <label><input type="radio" name="q7" value="D"> Marker / Spidol</label>
+        </div>
+      </li>
 
-    <div class="page" data-q="8">
-      <h3>8. Which one is used to draw? (Yang digunakan untuk menggambar adalah...)</h3>
-      <img src="https://upload.wikimedia.org/wikipedia/commons/f/f5/Markers.jpg" class="pic" alt="markers">
-      <div class="options">
-        <label><input type="radio" name="q8" value="A"> Guitar</label>
-        <label><input type="radio" name="q8" value="B"> Markers</label>
-        <label><input type="radio" name="q8" value="C"> Bike</label>
-        <label><input type="radio" name="q8" value="D"> Camera</label>
-      </div>
-    </div>
+      <li>
+        What do you use to write on paper? (Kamu menulis di atas kertas dengan apa?)<br>
+        <div class="options">
+          <label><input type="radio" name="q8" value="A"> Scissors / Gunting</label>
+          <label><input type="radio" name="q8" value="B"> Pencil / Pensil</label>
+          <label><input type="radio" name="q8" value="C"> Eraser / Penghapus</label>
+          <label><input type="radio" name="q8" value="D"> Ruler / Penggaris</label>
+        </div>
+      </li>
 
-    <div class="page" data-q="9">
-      <h3>9. “Those are my books.” What does “those” mean?</h3>
-      <div class="options">
-        <label><input type="radio" name="q9" value="A"> Dekat / near</label>
-        <label><input type="radio" name="q9" value="B"> Jauh / far</label>
-        <label><input type="radio" name="q9" value="C"> Banyak / many</label>
-        <label><input type="radio" name="q9" value="D"> Sedikit / few</label>
-      </div>
-    </div>
+      <li>
+        What color is the sky on a clear day? (Apa warna langit di hari cerah?)<br>
+        <div class="options">
+          <label><input type="radio" name="q9" value="A"> Green / Hijau</label>
+          <label><input type="radio" name="q9" value="B"> Blue / Biru</label>
+          <label><input type="radio" name="q9" value="C"> Yellow / Kuning</label>
+          <label><input type="radio" name="q9" value="D"> Red / Merah</label>
+        </div>
+      </li>
 
-    <div class="page" data-q="10">
-      <h3>10. Look at the picture. What is it?</h3>
-      <img src="https://upload.wikimedia.org/wikipedia/commons/4/45/Guitar.jpg" class="pic" alt="guitar">
-      <div class="options">
-        <label><input type="radio" name="q10" value="A"> Guitar</label>
-        <label><input type="radio" name="q10" value="B"> Camera</label>
-        <label><input type="radio" name="q10" value="C"> Bike</label>
-        <label><input type="radio" name="q10" value="D"> Robot</label>
-      </div>
-    </div>
+      <li>
+        My bag is ______ the chair. (Tasku berada ______ kursi.)<br>
+        <div class="options">
+          <label><input type="radio" name="q10" value="A"> on / di atas</label>
+          <label><input type="radio" name="q10" value="B"> in / di dalam</label>
+          <label><input type="radio" name="q10" value="C"> under / di bawah</label>
+          <label><input type="radio" name="q10" value="D"> beside / di samping</label>
+        </div>
+      </li>
 
-    <!-- ============ Soal 11–20 ============ -->
-    <div class="page" data-q="11">
-      <h3>11. How do you feel when you are sleepy?</h3>
-      <div class="options">
-        <label><input type="radio" name="q11" value="A"> Happy</label>
-        <label><input type="radio" name="q11" value="B"> Tired</label>
-        <label><input type="radio" name="q11" value="C"> Angry</label>
-        <label><input type="radio" name="q11" value="D"> Sad</label>
-      </div>
-    </div>
+      <li>
+        Which one is used for cutting paper? (Yang digunakan untuk memotong kertas adalah...)<br>
+        <div class="options">
+          <label><input type="radio" name="q11" value="A"> Scissors / Gunting</label>
+          <label><input type="radio" name="q11" value="B"> Ruler / Penggaris</label>
+          <label><input type="radio" name="q11" value="C"> Pen / Pulpen</label>
+          <label><input type="radio" name="q11" value="D"> Eraser / Penghapus</label>
+        </div>
+      </li>
 
-    <div class="page" data-q="12">
-      <h3>12. Choose the opposite of “sad”:</h3>
-      <div class="options">
-        <label><input type="radio" name="q12" value="A"> Happy</label>
-        <label><input type="radio" name="q12" value="B"> Angry</label>
-        <label><input type="radio" name="q12" value="C"> Tired</label>
-        <label><input type="radio" name="q12" value="D"> Sleepy</label>
-      </div>
-    </div>
+      <li>
+        What do you say when you meet your teacher in the morning?<br>
+        (Apa yang kamu ucapkan saat bertemu guru di pagi hari?)<br>
+        <div class="options">
+          <label><input type="radio" name="q12" value="A"> Good morning / Selamat pagi</label>
+          <label><input type="radio" name="q12" value="B"> Good night / Selamat malam</label>
+          <label><input type="radio" name="q12" value="C"> Goodbye / Selamat tinggal</label>
+          <label><input type="radio" name="q12" value="D"> See you / Sampai jumpa</label>
+        </div>
+      </li>
 
-    <div class="page" data-q="13">
-      <h3>13. What is the plural of “book”?</h3>
-      <div class="options">
-        <label><input type="radio" name="q13" value="A"> Books</label>
-        <label><input type="radio" name="q13" value="B"> Bookes</label>
-        <label><input type="radio" name="q13" value="C"> Bookies</label>
-        <label><input type="radio" name="q13" value="D"> Book</label>
-      </div>
-    </div>
+      <li>
+        What do you bring to school to write on? (Kamu membawa apa ke sekolah untuk menulis?)<br>
+        <div class="options">
+          <label><input type="radio" name="q13" value="A"> Book / Buku</label>
+          <label><input type="radio" name="q13" value="B"> Pencil case / Kotak pensil</label>
+          <label><input type="radio" name="q13" value="C"> Bag / Tas</label>
+          <label><input type="radio" name="q13" value="D"> Cap / Topi</label>
+        </div>
+      </li>
 
-    <div class="page" data-q="14">
-      <h3>14. “This is my pencil.” — What does “this” mean?</h3>
-      <div class="options">
-        <label><input type="radio" name="q14" value="A"> Dekat / near</label>
-        <label><input type="radio" name="q14" value="B"> Jauh / far</label>
-        <label><input type="radio" name="q14" value="C"> Banyak / many</label>
-        <label><input type="radio" name="q14" value="D"> Semua / all</label>
-      </div>
-    </div>
+      <li>
+        What day comes after Monday? (Hari apa setelah hari Senin?)<br>
+        <div class="options">
+          <label><input type="radio" name="q14" value="A"> Sunday / Minggu</label>
+          <label><input type="radio" name="q14" value="B"> Tuesday / Selasa</label>
+          <label><input type="radio" name="q14" value="C"> Wednesday / Rabu</label>
+          <label><input type="radio" name="q14" value="D"> Friday / Jumat</label>
+        </div>
+      </li>
 
-    <div class="page" data-q="15">
-      <h3>15. Which one is correct?</h3>
-      <div class="options">
-        <label><input type="radio" name="q15" value="A"> He have a bike.</label>
-        <label><input type="radio" name="q15" value="B"> He has a bike.</label>
-        <label><input type="radio" name="q15" value="C"> He having a bike.</label>
-        <label><input type="radio" name="q15" value="D"> He haves a bike.</label>
-      </div>
-    </div>
+      <li>
+        How many months are there in a year? (Ada berapa bulan dalam satu tahun?)<br>
+        <div class="options">
+          <label><input type="radio" name="q15" value="A"> 12</label>
+          <label><input type="radio" name="q15" value="B"> 10</label>
+          <label><input type="radio" name="q15" value="C"> 11</label>
+          <label><input type="radio" name="q15" value="D"> 9</label>
+        </div>
+      </li>
 
-    <div class="page" data-q="16">
-      <h3>16. How many letters are in the word “school”?</h3>
-      <div class="options">
-        <label><input type="radio" name="q16" value="A"> 6</label>
-        <label><input type="radio" name="q16" value="B"> 5</label>
-        <label><input type="radio" name="q16" value="C"> 7</label>
-        <label><input type="radio" name="q16" value="D"> 4</label>
-      </div>
-    </div>
+      <li>
+        What do you wear on your feet? (Kamu memakai apa di kakimu?)<br>
+        <div class="options">
+          <label><input type="radio" name="q16" value="A"> Cap / Topi</label>
+          <label><input type="radio" name="q16" value="B"> Shoes / Sepatu</label>
+          <label><input type="radio" name="q16" value="C"> Gloves / Sarung tangan</label>
+          <label><input type="radio" name="q16" value="D"> Tie / Dasi</label>
+        </div>
+      </li>
 
-    <div class="page" data-q="17">
-      <h3>17. Choose the correct spelling:</h3>
-      <div class="options">
-        <label><input type="radio" name="q17" value="A"> camra</label>
-        <label><input type="radio" name="q17" value="B"> camera</label>
-        <label><input type="radio" name="q17" value="C"> cammera</label>
-        <label><input type="radio" name="q17" value="D"> camare</label>
-      </div>
-    </div>
+      <li>
+        Which one can fly? (Yang bisa terbang adalah...)<br>
+        <div class="options">
+          <label><input type="radio" name="q17" value="A"> Bird / Burung</label>
+          <label><input type="radio" name="q17" value="B"> Fish / Ikan</label>
+          <label><input type="radio" name="q17" value="C"> Cat / Kucing</label>
+          <label><input type="radio" name="q17" value="D"> Dog / Anjing</label>
+        </div>
+      </li>
 
-    <div class="page" data-q="18">
-      <h3>18. Choose the correct sentence:</h3>
-      <div class="options">
-        <label><input type="radio" name="q18" value="A"> They are friends.</label>
-        <label><input type="radio" name="q18" value="B"> They is friends.</label>
-        <label><input type="radio" name="q18" value="C"> They am friends.</label>
-        <label><input type="radio" name="q18" value="D"> They be friends.</label>
-      </div>
-    </div>
+      <li>
+        What is the opposite of “hot”? (Lawan kata dari “hot” adalah...)<br>
+        <div class="options">
+          <label><input type="radio" name="q18" value="A"> Warm / Hangat</label>
+          <label><input type="radio" name="q18" value="B"> Cold / Dingin</label>
+          <label><input type="radio" name="q18" value="C"> Fresh / Segar</label>
+          <label><input type="radio" name="q18" value="D"> Big / Besar</label>
+        </div>
+      </li>
 
-    <div class="page" data-q="19">
-      <h3>19. What color is the sky?</h3>
-      <div class="options">
-        <label><input type="radio" name="q19" value="A"> Green</label>
-        <label><input type="radio" name="q19" value="B"> Red</label>
-        <label><input type="radio" name="q19" value="C"> Blue</label>
-        <label><input type="radio" name="q19" value="D"> Yellow</label>
-      </div>
-    </div>
+      <li>
+        Which month has 28 or 29 days? (Bulan apa yang punya 28 atau 29 hari?)<br>
+        <div class="options">
+          <label><input type="radio" name="q19" value="A"> January / Januari</label>
+          <label><input type="radio" name="q19" value="B"> February / Februari</label>
+          <label><input type="radio" name="q19" value="C"> March / Maret</label>
+          <label><input type="radio" name="q19" value="D"> April</label>
+        </div>
+      </li>
 
-    <div class="page" data-q="20">
-      <h3>20. Which one is a musical instrument?</h3>
-      <div class="options">
-        <label><input type="radio" name="q20" value="A"> Camera</label>
-        <label><input type="radio" name="q20" value="B"> Guitar</label>
-        <label><input type="radio" name="q20" value="C"> Marker</label>
-        <label><input type="radio" name="q20" value="D"> Bag</label>
-      </div>
-    </div>
+      <li>
+        Choose the correct sentence. (Pilih kalimat yang benar.)<br>
+        <div class="options">
+          <label><input type="radio" name="q20" value="A"> He can sings a song.</label>
+          <label><input type="radio" name="q20" value="B"> He can sing a song.</label>
+          <label><input type="radio" name="q20" value="C"> He cans sing a song.</label>
+          <label><input type="radio" name="q20" value="D"> He can to sing a song.</label>
+        </div>
+      </li>
+    </ol>
 
-    <!-- NAVIGATION -->
-    <div style="margin-top:10px;">
-      <button id="prevBtn" type="button">← Prev / Sebelumnya</button>
-      <button id="nextBtn" type="button">Next / Berikutnya →</button>
-      <button id="submitBtn" type="button" style="display:none;">Submit / Selesai</button>
-    </div>
-
-    <div id="result" style="display:none;"></div>
+    <button id="submitBtn">Submit / Selesai</button>
   </form>
+
+  <div id="result"></div>
 </div>
 
-<footer>Made for SD Islam Panji Nusantara • Semester Ganjil 2025/2026</footer>
-
 <script>
-const pages=[...document.querySelectorAll('.page')];
-const prog=document.getElementById('prog');
-const next=document.getElementById('nextBtn');
-const prev=document.getElementById('prevBtn');
-const submit=document.getElementById('submitBtn');
-let current=0;
+const answers = {
+  q1:'B', q2:'B', q3:'B', q4:'B', q5:'A', q6:'C', q7:'B', q8:'B', q9:'B', q10:'A',
+  q11:'A', q12:'A', q13:'A', q14:'B', q15:'A', q16:'B', q17:'A', q18:'B', q19:'B', q20:'B'
+};
 
-function showPage(i){
-  if(i<0||i>=pages.length)return;
-  pages.forEach((p,idx)=>p.classList.toggle('active',idx===i));
-  current=i;
-  prev.disabled=(i===0);
-  if(i===pages.length-1){
-    next.style.display='none';
-    submit.style.display='inline-block';
-  }else{
-    next.style.display='inline-block';
-    submit.style.display='none';
+document.getElementById("submitBtn").onclick = function() {
+  const form = document.getElementById("quizForm");
+  const result = document.getElementById("result");
+  let correct = 0;
+  let total = Object.keys(answers).length;
+  let unanswered = [];
+
+  for (let key in answers) {
+    const choice = form.querySelector(`input[name="${key}"]:checked`);
+    if (!choice) unanswered.push(key);
+    else if (choice.value === answers[key]) correct++;
   }
-  const pct=Math.round(((i+1)/pages.length)*100);
-  prog.style.width=pct+'%';
-}
 
-next.onclick=()=>showPage(current+1);
-prev.onclick=()=>showPage(current-1);
+  if (unanswered.length > 0) {
+    alert("Masih ada soal belum dijawab / Some questions are unanswered!");
+    return;
+  }
 
-const answers={q1:'B',q2:'B',q3:'B',q4:'B',q5:'A',q6:'B',q7:'A',q8:'B',q9:'B',q10:'A',
-               q11:'B',q12:'A',q13:'A',q14:'A',q15:'B',q16:'A',q17:'B',q18:'A',q19:'C',q20:'B'};
+  const score = Math.round((correct / total) * 100);
+  const grade = score >= 85 ? "A (Excellent)" :
+                 score >= 70 ? "B (Good)" :
+                 score >= 55 ? "C (Fair)" :
+                 "D (Try Again)";
 
-submit.onclick=function(){
-  const form=document.getElementById('quizForm');
-  const result=document.getElementById('result');
-  let correct=0;
+  result.innerHTML = `<strong>Score / Nilai:</strong> ${correct}/${total} (${score}%)<br>
+  <strong>Grade / Predikat:</strong> ${grade}`;
+  result.style.display = "block";
+};
+</script>
+</body>
+</html>
